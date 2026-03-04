@@ -1,144 +1,410 @@
 const allData = [
     {
-        title: 'Monogram',
-        type: 'svg',
+    title: 'Renders',
+    type: 'img',
+    bodyText: 'A collection of my renders made in Blender, including hard-surface modeling, composition, shader work, and various experiments.',
+    items: [
+        {
+            fileName: "AlpineStylized_tex", type: "video", size: "column2",
+            fullView: { fileName: "AlpineStylized_tex", title: "Alpine A310 Stylized", desc: "", date: "", otherImages: ["AlpineStylized_tex", "Renault_Alpine_A310_StylizedV2", "Renault_Alpine_A310_Stylized"] },
+        },
+        {
+            fileName: "CreationOfPino", type: "img", size: "column2",
+            fullView: { fileName: "CreationOfPino", title: "Creation Of Pino", desc: "", date: "", otherImages: ["CreationOfPino"] },
+        },
+        {
+            fileName: "AlpineA310_2", type: "img", size: "column2",
+            fullView: { fileName: "AlpineA310_2", title: "Alpine A310", desc: "", date: "", otherImages: ["AlpineA310_2", "AlpineA310_1", "AlpineA310_3", "AlpineA310_1_wireframe"] },
+        },
+
+        {
+            fileName: "Metropolis1927", type: "img", size: "onexone",
+            fullView: { fileName: "Metropolis1927", title: "Metropolis 1927", desc: "", date: "", otherImages: ["Metropolis1927"] },
+        },
+
+        {
+            fileName: "KimKitsuragi_2", type: "img", size: "row2",
+            fullView: { fileName: "KimKitsuragi_2", title: "KimKitsuragi", desc: "", date: "", otherImages: ["KimKitsuragi_2"] },
+        },
+        {
+            fileName: "SanjiLighter_Lit", type: "img", size: "row2",
+            fullView: { fileName: "SanjiLighter_Lit", title: "SanjiLighter", desc: "", date: "", otherImages: ["SanjiLighter_Lit", "SanjiLighter", "SanjiLighter_closeup", "SanjiLighter_wireframe"] },
+        },
+        {
+            fileName: "BladerunnerPoolRoom", type: "img", size: "column2",
+            fullView: { fileName: "BladerunnerPoolRoom", title: "Bladerunner Pool Room", desc: "", date: "", otherImages: ["BladerunnerPoolRoom"] },
+        },
+        {
+            fileName: "BassGuitar", type: "img", size: "column2",
+            fullView: { fileName: "BassGuitar", title: "Bass Guitar", desc: "", date: "", otherImages: ["BassGuitar"] },
+        },
+        {
+            fileName: "Guitar_Painterly", type: "img", size: "column2",
+            fullView: { fileName: "Guitar_Painterly", title: "Guitar Painterly", desc: "", date: "", otherImages: ["Guitar_Painterly"] },
+        },
+        {
+            fileName: "Speaker_01", type: "img", size: "column2",
+            fullView: { fileName: "Speaker_01", title: "Speaker", desc: "", date: "", otherImages: ["Speaker_01"] },
+        },
+        {
+            fileName: "RibbonBackground_4k", type: "img", size: "column2",
+            fullView: { fileName: "RibbonBackground_4k", title: "Ribbon Background", desc: "", date: "", otherImages: ["RibbonBackground_4k"] },
+        },
+        {
+            fileName: "Sci-Fi_Futurism_Art", type: "img", size: "row2",
+            fullView: { fileName: "Sci-Fi_Futurism_Art", title: "Sci-Fi Futurism Art", desc: "", date: "", otherImages: ["Sci-Fi_Futurism_Art"] },
+        },
+        {
+            fileName: "PhoneLightStreaksASUS", type: "img", size: "column2",
+            fullView: { fileName: "PhoneLightStreaksASUS", title: "Phone Light-streaks", desc: "", date: "", otherImages: ["PhoneLightStreaksASUS"] },
+        },
+
+        {
+            fileName: "Renault_Alpine_A310_StylizedV2", type: "img", size: "column2",
+            fullView: { fileName: "Renault_Alpine_A310_StylizedV2", title: "Alpine A310 Stylized", desc: "", date: "", otherImages: ["Renault_Alpine_A310_StylizedV2", "Renault_Alpine_A310_Stylized", "Renault_Alpine_A310_03"] },
+        },
+        {
+            fileName: "Robots_BaW", type: "img", size: "column2", class: "pixelated",
+            fullView: { fileName: "Robots_BaW", title: "Robots B&W", desc: "", date: "", otherImages: ["Robots_BaW"] },
+        },
+
+        {
+            fileName: "OppenheimerThumbnail02", type: "img", size: "column2",
+            fullView: { fileName: "OppenheimerThumbnail02", title: "Oppenheimer 02", desc: "", date: "", otherImages: ["OppenheimerThumbnail02"] },
+        },
+        {
+            fileName: "OppenheimerThumbnail01", type: "img", size: "column2",
+            fullView: { fileName: "OppenheimerThumbnail01", title: "Oppenheimer 01", desc: "", date: "", otherImages: ["OppenheimerThumbnail01"] },
+        },
+        {
+            fileName: "OppenheimerThumbnail04", type: "img", size: "column2",
+            fullView: { fileName: "OppenheimerThumbnail04", title: "Oppenheimer 04", desc: "", date: "", otherImages: ["OppenheimerThumbnail04"] },
+        },
+        {
+            fileName: "OppenheimerThumbnail03", type: "img", size: "column2",
+            fullView: { fileName: "OppenheimerThumbnail03", title: "Oppenheimer 03", desc: "", date: "", otherImages: ["OppenheimerThumbnail03"] },
+        },
+
+        {
+            fileName: "Liminal_01COMPOSITE", type: "img", size: "column2",
+            fullView: { fileName: "Liminal_01COMPOSITE", title: "Liminal", desc: "", date: "", otherImages: ["Liminal_01COMPOSITE"] },
+        },
+        {
+            fileName: "Pikuniku", type: "img", size: "column2",
+            fullView: { fileName: "Pikuniku", title: "Pikuniku", desc: "", date: "", otherImages: ["Pikuniku"] },
+        },
+        {
+            fileName: "Pancakes_03", type: "img", size: "column2",
+            fullView: { fileName: "Pancakes_03", title: "Pancakes", desc: "", date: "", otherImages: ["Pancakes_03"] },
+        },
+
+        {
+            fileName: "DRGWeapons", type: "img", size: "column2",
+            fullView: { fileName: "DRGWeapons", title: "DRG Weapons", desc: "", date: "", otherImages: ["DRGWeapons"] },
+        },
+        {
+            fileName: "DesertScene_1", type: "img", size: "column2",
+            fullView: { fileName: "DesertScene_1", title: "Desert Scene", desc: "", date: "", otherImages: ["DesertScene_1"] },
+        },
+        {
+            fileName: "BuildingsInFog_PAINTED-_Small_", type: "img", size: "column2",
+            fullView: { fileName: "BuildingsInFog_PAINTED-_Small_", title: "Buildings in Fog", desc: "", date: "", otherImages: ["BuildingsInFog_PAINTED-_Small_"] },
+        },
+
+        {
+            fileName: "CasseteTape", type: "video", size: "onexone",
+            fullView: { fileName: "CasseteTape", title: "Cassete Tape", desc: "", date: "", otherImages: ["CasseteTape"] },
+        },
+
+        {
+            fileName: "Typewriter_2", type: "img", size: "onexone",
+            fullView: { fileName: "Typewriter_2", title: "Typewriter", desc: "", date: "", otherImages: ["Typewriter_2"] },
+        },
+
+        {
+            fileName: "InsideJob", type: "video", size: "onexone",
+            fullView: { fileName: "InsideJob", title: "Inside-Job", desc: "", date: "", otherImages: ["InsideJob"] },
+        },
+        {
+            fileName: "LilRobotVideo", type: "video", size: "onexone",
+            fullView: { fileName: "LilRobotVideo", title: "LilRobot", desc: "", date: "", otherImages: ["LilRobotVideo"] },
+        },
+        {
+            fileName: "Triangle", type: "video", size: "onexone",
+            fullView: { fileName: "Triangle", title: "Triangle", desc: "", date: "", otherImages: ["Triangle"] },
+        },
+        {
+            fileName: "Alien_1", type: "img", size: "row2",
+            fullView: { fileName: "Alien_1", title: "Alien", desc: "", date: "", otherImages: ["Alien_1"] },
+        },
+        {
+            fileName: "WavesCompressed", type: "video", size: "column2",
+            fullView: { fileName: "WavesCompressed", title: "Waves", desc: "", date: "", otherImages: ["WavesCompressed"] },
+        },
+
+        {
+            fileName: "CircuitPuzzleThing_02", type: "img", size: "onexone",
+            fullView: { fileName: "CircuitPuzzleThing_02", title: "Circuit Puzzle", desc: "", date: "", otherImages: ["CircuitPuzzleThing_02"] },
+        },
+        {
+            fileName: "Astronomy", type: "img", size: "column2",
+            fullView: { fileName: "Astronomy", title: "Astronomy", desc: "", date: "", otherImages: ["Astronomy"] },
+        },
+
+        {
+            fileName: "GoatSkull", type: "img", size: "onexone", class: "pixelated",
+            fullView: { fileName: "GoatSkull", title: "Goat Skull", desc: "", date: "", otherImages: ["GoatSkull"] },
+        },
+        {
+            fileName: "ColosseumPixel_2", type: "img", size: "onexone", class: "pixelated",
+            fullView: { fileName: "ColosseumPixel_2", title: "ColosseumPixel", desc: "", date: "", otherImages: ["ColosseumPixel_2"] },
+        },
+        {
+            fileName: "City_01.4", type: "img", size: "onexone", class: "pixelated",
+            fullView: { fileName: "City_01.4", title: "City", desc: "", date: "", otherImages: ["City_01.4"] },
+        },
+        {
+            fileName: "City_02.1", type: "img", size: "onexone", class: "pixelated",
+            fullView: { fileName: "City_02.1", title: "City", desc: "", date: "", otherImages: ["City_02.1"] },
+        },
+
+        {
+            fileName: "CultOfTheLamb", type: "img", size: "onexone",
+            fullView: { fileName: "CultOfTheLamb", title: "Cult of the Lamb", desc: "", date: "", otherImages: ["CultOfTheLamb"] },
+        },
+        {
+            fileName: "FloatingIslands", type: "img", size: "onexone",
+            fullView: { fileName: "FloatingIslands", title: "Floating Islands", desc: "", date: "", otherImages: ["FloatingIslands"] },
+        },
+        {
+            fileName: "Blueprint", type: "img", size: "onexone",
+            fullView: { fileName: "Blueprint", title: "Blueprint", desc: "", date: "", otherImages: ["Blueprint"] },
+        },
+
+        {
+            fileName: "CatPlanet", type: "img", size: "onexone",
+            fullView: { fileName: "CatPlanet", title: "Cat Planet", desc: "", date: "", otherImages: ["CatPlanet"] },
+        },
+        {
+            fileName: "CatLavaLamp_Sketch", type: "img", size: "onexone",
+            fullView: { fileName: "CatLavaLamp_Sketch", title: "Cat Lavalamp", desc: "", date: "", otherImages: ["CatLavaLamp_Sketch"] },
+        },
+        {
+            fileName: "CatFlame_Sketch", type: "img", size: "onexone",
+            fullView: { fileName: "CatFlame_Sketch", title: "Cat Flame", desc: "", date: "", otherImages: ["CatFlame_Sketch"] },
+        },
+
+        {
+            fileName: "TreasureGlare", type: "img", size: "column2",
+            fullView: { fileName: "TreasureGlare", title: "Treasure", desc: "", date: "", otherImages: ["TreasureGlare"] },
+        },
+        {
+            fileName: "bridgething", type: "img", size: "column2",
+            fullView: { fileName: "bridgething", title: "Bridge", desc: "", date: "", otherImages: ["bridgething"] },
+        },
+        {
+            fileName: "DavidPaint2", type: "img", size: "row2",
+            fullView: { fileName: "DavidPaint2", title: "David Paint", desc: "", date: "", otherImages: ["DavidPaint2"] },
+        },
+        {
+            fileName: "glasstest", type: "img", size: "column2",
+            fullView: { fileName: "glasstest", title: "Glass test", desc: "", date: "", otherImages: ["glasstest"] },
+        },
+        {
+            fileName: "Ship_lines_crop", type: "img", size: "column2",
+            fullView: { fileName: "Ship_lines_crop", title: "Ship lines", desc: "", date: "", otherImages: ["Ship_lines_crop"] },
+        },
+        {
+            fileName: "viking_scene_snow_cycles", type: "img", size: "column2",
+            fullView: { fileName: "viking_scene_snow_cycles", title: "Viking scene(Snow)", desc: "", date: "", otherImages: ["viking_scene_snow_cycles"] },
+        },
+    ]
+    },
+    {
+        title: 'Geometry Nodes',
+        type: 'img',
+        bodyText: 'Geometry Nodes is a system in Blender for creating procedural geometry using node trees. All of these projects were built entirely with Geo Nodes.',
         items: [
-            { name: "Asset 2", type: "svg", size: "", direction: "up", },
-            { name: "Asset 3", type: "svg", size: "", direction: "up", },
-            { name: "Asset 4", type: "svg", size: "", direction: "up", },
-            { name: "Asset 5", type: "svg", size: "", direction: "up", },
-            { name: "Asset 6", type: "svg", size: "", direction: "up", },
-            { name: "Asset 7", type: "svg", size: "", direction: "up", },
-            { name: "Asset 8", type: "svg", size: "", direction: "up", },
-            { name: "Asset 9", type: "svg", size: "", direction: "up", },
-            { name: "Asset 10", type: "svg", size: "", direction: "up", },
-            { name: "Asset 11", type: "svg", size: "", direction: "up", },
-            { name: "Asset 12", type: "svg", size: "", direction: "up", },
-            { name: "Asset 13", type: "svg", size: "", direction: "up", },
-            { name: "Asset 24", type: "svg", size: "", direction: "up", },
+            {
+                fileName: "SweaterThreadsTop", type: "img", size: "onexone",
+                fullView: {
+                    fileName: "SweaterThreadsTop",
+                    title: "Sweater Threads Display",
+                    desc: `Geometry-nodes project where I created an array of weaving patterns and set them to display a image based pattern in addition to creating individual threads and twisting them into "yarn".`,
+                    date: "23. november 2025",
+                    otherImages: ["SweaterThreadsTop", "SweaterThreadsCloseUp", "Sweater_Threads_Display_geonodes"]
+                },
+            },
+
+            {
+                fileName: "ZipperBounce", type: "video", size: "onexone",
+                fullView: {
+                    fileName: "ZipperBounce",
+                    title: "Zipper Bounce",
+                    desc: "",
+                    date: "",
+                    otherImages: ["ZipperBounce", "ZipperBounce_wireframe", "ZipperBounce_geonodes", ]
+                },
+            },
+
+            {
+                fileName: "LED", type: "img", size: "onexone",
+                fullView: {
+                    fileName: "LED",
+                    title: "LED",
+                    desc: "",
+                    date: "",
+                    otherImages: ["LED", "LED_wireframe", "LED_geonodes"]
+                },
+            },
+
+            {
+                fileName: "Resistor", type: "img", size: "onexone",
+                fullView: {
+                    fileName: "Resistor",
+                    title: "Resistor",
+                    desc: "",
+                    date: "",
+                    otherImages: ["Resistor", "Resistor_screenshot", "Resistor_geonodes"]
+                },
+            },
+
+            {
+                fileName: "Sunflower", type: "img", size: "onexone",
+                fullView: {
+                    fileName: "Sunflower",
+                    title: "Sunflower",
+                    desc: "",
+                    date: "",
+                    otherImages: ["Sunflower", "Sunflower_wireframe", "Sunflower_geonodes"]
+                },
+            },
+
+            {
+                fileName: "7Segment", type: "video", size: "onexone",
+                fullView: {
+                    fileName: "7Segment",
+                    title: "7 Segment",
+                    desc: "I had just leared about Boolean algebra and logic gates and I implemented that into making a 7 segment display in Blender Geometry-nodes.",
+                    date: "25. august 2025",
+                    otherImages: ["7Segment", "7Segment_geonodes"]
+                }
+            },
+
+            {
+                fileName: "Mushroom_03", type: "img", size: "onexone",
+                fullView: {
+                    fileName: "Mushroom_03",
+                    title: "Mushroom",
+                    desc: "",
+                    date: "",
+                    otherImages: ["Mushroom_03"]
+                },
+            },
+
+            {
+                fileName: "SnapParticleSim", type: "video", size: "onexone",
+                fullView: {
+                    fileName: "SnapParticleSim",
+                    title: "Snap Particle Simulation",
+                    desc: "",
+                    date: "",
+                    otherImages: ["SnapParticleSim"]
+                },
+            },
+
+            {
+                fileName: "Cordyceps", type: "img", size: "onexone",
+                fullView: {
+                    fileName: "Cordyceps",
+                    title: "Cordyceps",
+                    desc: "",
+                    date: "",
+                    otherImages: ["Cordyceps"]
+                },
+            },
         ]
     },
     {
-        title: 'Renders',
-        type: 'img',
+        title: 'Monogram',
+        type: 'svg',
+        bodyText: 'These are some personal monograms I designed for a school project.',
         items: [
-            { name: "Mushroom_03", type: "img", size: "onexone", direction: "left", animdelay: false, },
-            { name: "SnapParticleSim", type: "video", size: "onexone", direction: "left", animdelay: true, },
-            
-            { name: "Metropolis1927", type: "img", size: "onexone", direction: "right", animdelay: false, },
-
-            { name: "KimKitsuragi_2", type: "img", size: "row2", direction: "left", animdelay: false, },
-            { name: "SanjiLighter_Lit", type: "img", size: "row2", direction: "left", animdelay: false, },
-            { name: "BladerunnerPoolRoom", type: "img", size: "column2", direction: "right", animdelay: false, },
-
-            { name: "BassGuitar", type: "img", size: "column2", direction: "right", animdelay: false, },
-            { name: "Guitar_Painterly", type: "img", size: "column2", direction: "right", animdelay: false, },
-            { name: "Speaker_01", type: "img", size: "column2", direction: "left", animdelay: false, },
-
-            { name: "RibbonBackground_4k", type: "img", size: "column2", direction: "right", animdelay: false, },
-            { name: "Sci-Fi_Futurism_Art", type: "img", size: "row2", direction: "left", animdelay: false, },
-            { name: "PhoneLightStreaksASUS", type: "img", size: "column2", direction: "up", animdelay: false, },
-            
-            { name: "Cordyceps", type: "img", size: "onexone", direction: "left", animdelay: false, },
-            { name: "Renault_Alpine_A310_StylizedV2", type: "img", size: "column2", direction: "up", animdelay: false, },
-            { name: "Robots_BaW", type: "img", size: "column2", direction: "up", animdelay: false, },
-
-            { name: "OppenheimerThumbnail02", type: "img", size: "column2", direction: "left", animdelay: false, },
-            { name: "OppenheimerThumbnail01", type: "img", size: "column2", direction: "right", animdelay: false, },
-            { name: "OppenheimerThumbnail04", type: "img", size: "column2", direction: "left", animdelay: false, },
-            { name: "OppenheimerThumbnail03", type: "img", size: "column2", direction: "right", animdelay: false, },
-            
-            { name: "Liminal_01COMPOSITE", type: "img", size: "column2", direction: "left", animdelay: false, },
-            { name: "Pikuniku", type: "img", size: "column2", direction: "right", animdelay: false, },
-            { name: "Pancakes_03", type: "img", size: "column2", direction: "left", animdelay: false, },
-
-            { name: "DRGWeapons (Small)", type: "img", size: "column2", direction: "right", animdelay: false, },
-            { name: "DesertScene_1 (Small)", type: "img", size: "column2", direction: "left", animdelay: false, },
-            { name: "BuildingsInFog_PAINTED-_Small_", type: "img", size: "column2", direction: "right", animdelay: false, },
-
-            { name: "CasseteTape", type: "video", size: "onexone", direction: "right", animdelay: true, },
-
-            { name: "Typewriter_2 (Small)", type: "img", size: "onexone", direction: "right", animdelay: false, },
-
-            { name: "InsideJob", type: "video", size: "onexone", direction: "left", },
-            { name: "LilRobotVideo", type: "video", size: "onexone", direction: "left", animdelay: true, },
-            { name: "Triangle", type: "video", size: "onexone", direction: "right", animdelay: true, },
-            { name: "Alien_1 (Small)", type: "img", size: "row2", direction: "right", },
-            { name: "WavesCompressed", type: "video", size: "column2", direction: "left", },
-
-            { name: "CircuitPuzzleThing_02 (Small)", type: "img", size: "onexone", direction: "right", animdelay: true, },
-            { name: "Astronomy (Small)", type: "img", size: "column2", direction: "left", },
-
-            { name: "GoatSkull", type: "img", size: "onexone", direction: "right", class: "pixelated", animdelay: true, },
-            { name: "ColosseumPixel_2", type: "img", size: "onexone", direction: "right", class: "pixelated", },
-            { name: "City_01.4", type: "img", size: "onexone", direction: "left", class: "pixelated", },
-            { name: "City_02.1", type: "img", size: "onexone", direction: "left", class: "pixelated", animdelay: true, },
-
-            { name: "CultOfTheLamb (Small)", type: "img", size: "onexone", direction: "right", animdelay: true, },
-            { name: "FloatingIslands (Small)", type: "img", size: "onexone", direction: "right", },
-            { name: "Blueprint (Small)", type: "img", size: "onexone", direction: "left", },
-
-            { name: "CatPlanet (Small)", type: "img", size: "onexone", direction: "left", animdelay: true, },
-            { name: "CatLavaLamp_Sketch (Small)", type: "img", size: "onexone", direction: "right", animdelay: true, },
-            { name: "CatFlame_Sketch (Small)", type: "img", size: "onexone", direction: "right", },
-
-            { name: "TreasureGlare (Small)", type: "img", size: "column2", direction: "left", },
-            { name: "bridgething(Small)", type: "img", size: "column2", direction: "right", },
-            { name: "DavidPaint2(Small)", type: "img", size: "row2", direction: "left", },
-            { name: "glasstest(Small)", type: "img", size: "column2", direction: "up", },
-            { name: "Ship_lines_crop", type: "img", size: "column2", direction: "up", },
-            { name: "viking_scene_snow_cycles(Small)", type: "img", size: "column2", direction: "left", },
+            { fileName: "Monogram_2", type: "svg", size: "", direction: "up", },
+            { fileName: "Monogram_3", type: "svg", size: "", direction: "up", },
+            { fileName: "Monogram_4", type: "svg", size: "", direction: "up", },
+            { fileName: "Monogram_5", type: "svg", size: "", direction: "up", },
+            { fileName: "Monogram_6", type: "svg", size: "", direction: "up", },
+            { fileName: "Monogram_7", type: "svg", size: "", direction: "up", },
+            { fileName: "Monogram_8", type: "svg", size: "", direction: "up", },
+            { fileName: "Monogram_9", type: "svg", size: "", direction: "up", },
+            { fileName: "Monogram_10", type: "svg", size: "", direction: "up", },
+            { fileName: "Monogram_11", type: "svg", size: "", direction: "up", },
+            { fileName: "Monogram_12", type: "svg", size: "", direction: "up", },
+            { fileName: "Monogram_13", type: "svg", size: "", direction: "up", },
+            { fileName: "Monogram_24", type: "svg", size: "", direction: "up", },
         ]
     },
     {
         title: 'Others',
         type: 'img',
+        bodyText: 'Here are some of my other projects that don’t fit into the other categories. I modeled the EP-133 and OP-Field meshes from reference photos in Plasticity and rendered them in Blender.',
         items: [
-            { name: "EP-133 K.O. II_Collection01", type: "img", size: "row2", direction: "left", animdelay: false, },
-            { name: "EP-133 K.O. II_Collection03", type: "img", size: "row2", direction: "left", animdelay: false, },
-            { name: "EP-133 K.O. II_Collection04", type: "img", size: "row2", direction: "left", animdelay: false, },
-            { name: "EP-133 K.O. II_Collection05", type: "img", size: "row2", direction: "left", animdelay: false, },
+            { fileName: "EP-133 K.O. II_Collection01", type: "img", size: "row2", direction: "left", animdelay: false, },
+            { fileName: "EP-133 K.O. II_Collection03", type: "img", size: "row2", direction: "left", animdelay: false, },
+            { fileName: "EP-133 K.O. II_Collection04", type: "img", size: "row2", direction: "left", animdelay: false, },
+            { fileName: "EP-133 K.O. II_Collection05", type: "img", size: "row2", direction: "left", animdelay: false, },
             
-            { name: "OP-1_field_Collection04", type: "img", size: "row2", direction: "left", animdelay: false, },
-            { name: "OP-1_field_Collection03", type: "img", size: "row2", direction: "left", animdelay: false, },
-            { name: "OP-1_field_Collection02", type: "img", size: "row2", direction: "left", animdelay: false, },
-            { name: "OP-1_field_Collection01", type: "img", size: "row2", direction: "left", animdelay: false, },
+            { fileName: "OP-1_field_Collection04", type: "img", size: "row2", direction: "left", animdelay: false, },
+            { fileName: "OP-1_field_Collection03", type: "img", size: "row2", direction: "left", animdelay: false, },
+            { fileName: "OP-1_field_Collection02", type: "img", size: "row2", direction: "left", animdelay: false, },
+            { fileName: "OP-1_field_Collection01", type: "img", size: "row2", direction: "left", animdelay: false, },
 
-            { name: "FinalMockupsCollage (Small)", type: "img", size: "column2", direction: "up", },
-            { name: "Yeah01", type: "img", size: "onexone", direction: "up", },
-            { name: "Dunes", type: "img", size: "onexone", direction: "up", },
-            { name: "Neon_Nikolai", type: "img", size: "onexone", direction: "up", },
-            { name: "EyesStuff", type: "img", size: "onexone", direction: "up", },
-            { name: "cube", type: "gif", size: "onexone", direction: "up", },
-            { name: "BEEFREE (Small)", type: "img", size: "onexone", direction: "up", },
+            { fileName: "FinalMockupsCollage", type: "img", size: "column2", direction: "up", },
+            { fileName: "Yeah01", type: "img", size: "onexone", direction: "up", },
+            { fileName: "Dunes", type: "img", size: "onexone", direction: "up", },
+            { fileName: "Neon_Nikolai", type: "img", size: "onexone", direction: "up", },
+            { fileName: "EyesStuff", type: "img", size: "onexone", direction: "up", },
+            { fileName: "cube", type: "gif", size: "onexone", direction: "up", },
+            { fileName: "BEEFREE", type: "img", size: "onexone", direction: "up", },
         ]
     },
 
 ]
 
+const filePath = {
+    thumbnail: "/home/img/GraphicsDesign/ThumbnailRes/", 
+    fullRes: "/home/img/GraphicsDesign/FullRes/"
+}
 
 const body = document.getElementById('mainbodyforcards')
 const tabcont = document.getElementById('tab-cont')
 allData.forEach(element => {
     const tabbutton = document.createElement('button')
     tabbutton.classList.add('tab-button')
-    tabbutton.appendChild(document.createTextNode(element.title))
-    tabcont.appendChild(tabbutton)
+    tabbutton.append(document.createTextNode(element.title))
+    tabcont.append(tabbutton)
 })
 
 const addImageGroups = (index) => {
     const element = allData[index]
     // const innerbody = document.createElement('div')
     // innerbody.classList.add('innerbody')
-    // body.appendChild(innerbody)
+    // body.append(innerbody)
 
     const title = document.createElement('div')
     title.classList.add('title')
-    title.appendChild(document.createTextNode(element.title))
-    // innerbody.appendChild(title)
-    body.appendChild(title)
+    title.append(document.createTextNode(element.title))
+    // innerbody.append(title)
+    body.append(title)
 
-
+    if(element.bodyText){
+        const bodyText = document.createElement('div')
+        bodyText.classList.add('bodyText')
+        bodyText.append(document.createTextNode(element.bodyText))
+        body.append(bodyText)
+    }
+    
     const cont = document.createElement('div')
     switch (element.type) {
         case 'svg':
@@ -151,8 +417,8 @@ const addImageGroups = (index) => {
             console.log('You done messed up: Type')
             break;
     }
-    // innerbody.appendChild(cont)
-    body.appendChild(cont)
+    // innerbody.append(cont)
+    body.append(cont)
 
     element.items.forEach(element => {
         const anim = document.createElement('div')
@@ -164,15 +430,15 @@ const addImageGroups = (index) => {
         const image = document.createElement('img')
         switch (element.type) {
             case 'svg':
-                anim.innerHTML = `<img src="/home/img/GraphicsDesign/${element.name}.svg" onload="SVGInject(this,{makeIdsUnique:false,useCache:false})">`
+                anim.innerHTML = `<img src="${filePath.thumbnail}${element.fileName}.svg" onload="SVGInject(this,{makeIdsUnique:false,useCache:false})">`
                 break;
             case 'img':
-                image.src = "/home/img/GraphicsDesign/" + element.name + ".png"
-                anim.appendChild(image)
+                image.src = filePath.thumbnail + element.fileName + ".png"
+                anim.append(image)
                 break;
             case 'gif':
-                image.src = "/home/img/GraphicsDesign/" + element.name + ".gif"
-                anim.appendChild(image)
+                image.src = filePath.thumbnail + element.fileName + ".gif"
+                anim.append(image)
                 break;
             case 'video':
                 const video = document.createElement('video')
@@ -181,20 +447,20 @@ const addImageGroups = (index) => {
                 video.loop = true
                 video.playsinline = true
                 video.controlslist = "nofullscreen nodownload noremoteplayback noplaybackrate foobar"
-                anim.appendChild(video)
+                anim.append(video)
                 const sourceWEBM = document.createElement('source')
-                sourceWEBM.src = './home/img/GraphicsDesign/' + element.name + '.webm'
+                sourceWEBM.src = '.' + filePath.thumbnail + element.fileName + '.webm'
                 sourceWEBM.type = 'video/webm'
                 const sourceMP4 = document.createElement('source')
-                sourceMP4.src = './home/img/GraphicsDesign/' + element.name + '.mp4'
+                sourceMP4.src = '.'+ filePath.thumbnail + element.fileName + '.mp4'
                 sourceMP4.type = 'video/mp4'
-                video.appendChild(sourceWEBM)
-                video.appendChild(sourceMP4)
+                video.append(sourceWEBM)
+                video.append(sourceMP4)
                 break;
             default:
                 break;
         }
-        cont.appendChild(anim)
+        cont.append(anim)
         let direction = "left";
         if (anim.getBoundingClientRect().left > document.body.clientWidth/2){
             direction = "right";
@@ -205,9 +471,98 @@ const addImageGroups = (index) => {
         anim.classList.add('anim-' + direction)
         if (anim.getBoundingClientRect().left > document.body.clientWidth/1.9 || anim.getBoundingClientRect().right < document.body.clientWidth/2.1){
             anim.classList.add('anim-delay')
-        }      
+        }
+        anim.addEventListener("click", () => {
+            openFullRes(element)
+        })      
     })
 
+}
+
+const openFullRes = (iO) => {   
+    const fullView = iO.fullView
+    const fullviewBody = document.createElement('div');
+    fullviewBody.classList.add('modalBody')
+    const descElem = document.createElement('div');  
+    descElem.append(document.createTextNode(fullView.desc))
+    descElem.classList.add('modalDesc')
+    
+    fullviewBody.append(descElem, modalCarousel(fullView.otherImages))    
+    openModal(fullView.title,fullviewBody, null, null, true)
+}
+
+const modalCarousel = (imgArr) => {
+    const leftBut = document.createElement('button');
+    leftBut.innerText = 'ᐊ';
+    leftBut.classList.add("carouselButton","left");
+
+    const rightBut = document.createElement('button');
+    rightBut.innerText = 'ᐅ';
+    rightBut.classList.add("carouselButton","right");
+    const imgCont = document.createElement('div');
+    imgCont.classList.add('modalCarouselImgCont')
+    imgArr.forEach(e => {
+        const fullResImg = document.createElement('img');   
+        const imageDiv = document.createElement('div');
+        imageDiv.classList.add('imageDivMod');
+
+        fullResImg.classList.add('modalImage');
+        console.log(e);
+        
+        const full = `${filePath.fullRes}${e}.png`;
+        const thumb = `${filePath.thumbnail}${e}.png`;
+
+        fullResImg.onerror = () => {
+            fullResImg.onerror = null;
+            fullResImg.src = thumb;
+        };
+
+        fullResImg.src = full;
+
+        imageDiv.append(fullResImg);
+        imgCont.append(imageDiv);
+    });
+    
+    let index = 0;
+    const clampIndex = (i) => {
+        const max = imgArr.length - 1;
+        return Math.max(0, Math.min(max, i));
+    };
+    const updateButtons = () => {
+        leftBut.disabled = index === 0;
+        rightBut.disabled = index === imgArr.length - 1;
+    };
+
+    const movePos = (n) => {
+        index = clampIndex(n);
+        imgCont.style.transform = `translateX(-${index * 100}%)`;
+
+        updateButtons();
+    };
+
+    imgCont.style.transition = "transform 250ms ease";
+    imgCont.style.willChange = "transform";
+
+    leftBut.addEventListener("click", () => movePos(index - 1));
+    rightBut.addEventListener("click", () => movePos(index + 1));
+
+    const onKeyDown = (ev) => {
+        if (!document.body.contains(carousel)) {
+            window.removeEventListener("keydown", onKeyDown);
+            return;
+        }
+        if (ev.key === "ArrowLeft") movePos(index - 1);
+        if (ev.key === "ArrowRight") movePos(index + 1);
+    }
+
+    movePos(0);
+
+    const carousel = document.createElement('div')
+    carousel.classList.add("modalCarousel");
+    
+    carousel.append(imgCont, leftBut, rightBut)
+
+    return carousel
 }
 
 const buttons = document.querySelectorAll(".tab-button")

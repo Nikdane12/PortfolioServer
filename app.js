@@ -7,10 +7,7 @@ const portfolio = config.getApp('portfolio')
 const port = portfolio.port
 
 let hostname = networks.wifi?.address
-// hostname = "129.242.77.162" //eduroam
-// hostname = "129.242.253.132" //eduroam Campus
-
-// hostname = "10.239.253.238" //uitgjest
+// hostname = "192.168.1.127";
 
 if (typeof hostname === 'undefined') {
     console.log('WARNING: WiFi network address not found, using localhost')

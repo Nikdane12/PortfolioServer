@@ -1,0 +1,245 @@
+.custombutton {
+    --button_radius: 0.75em;
+    --button_color: #e8e8e8;
+    --button_outline_color: #000000;
+    font-size: 15px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    border-radius: var(--button_radius);
+    background: var(--button_outline_color);
+}
+
+.button_top {
+    display: block;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    border: 2px solid var(--button_outline_color);
+    border-radius: var(--button_radius);
+    padding: 0.75em 1.5em;
+    background: var(--button_color);
+    color: var(--button_outline_color);
+    -webkit-transform: translateY(-0.2em);
+    -ms-transform: translateY(-0.2em);
+    transform: translateY(-0.2em);
+    -webkit-transition: -webkit-transform 0.1s ease;
+    transition: -webkit-transform 0.1s ease;
+    transition: transform 0.1s ease;
+    transition:
+        transform 0.1s ease,
+        -webkit-transform 0.1s ease;
+}
+
+.custombutton:hover .button_top {
+    -webkit-transform: translateY(-0.33em);
+    -ms-transform: translateY(-0.33em);
+    transform: translateY(-0.33em);
+}
+
+.custombutton:active .button_top {
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+}
+
+.modalBACK {
+    position: fixed;
+    margin: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: black;
+    font-size: 12px;
+    display: flex;
+    justify-content: center;
+    z-index: 999;
+}
+
+.modal {
+    color: rgb(var(--textbasic));
+    background-color: rgb(var(--color1));
+    padding: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    text-align: center;
+    width: 64%;
+    margin-top: 30px;
+    height: calc(100vh - 2*20px - 2*30px);
+    overflow: scroll;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    position: relative;
+
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+
+.modalTitle{
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.modalBody{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+}
+
+.modalClose{
+    position: fixed;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1.5em;
+
+    height: 20px;
+    width: 20px;
+}
+
+.modalDesc{
+    width: 90%;
+    margin: auto;
+    font-size: 20px;
+}
+
+.modalImage{
+    width: 100%;
+    object-fit: contain;
+}
+
+.modallistitem{
+    display: flex;
+    gap: 5px;
+}
+
+.modallistitem>div{
+    display: flex;
+    gap: 5px;
+}
+
+
+.modallistitem>div>button{
+    width: 20px;
+    height: 20px;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
+.modallistitem>div>button.disabled, .modallistitem>button.disabled{
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.gamemodeModalList, .gamemodeModalSecondList{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.modal>.title{
+    font-size: 35px;
+}
+
+.modalCarouselImgCont{
+    display: flex;
+    width: 100%;
+}
+
+.modalCarousel {
+    position: relative;
+    overflow: hidden;
+}
+
+.spoiler {
+  position: relative;
+  display: inline-block;
+  text-align: center;
+  width: fit-content;
+  margin: auto;
+  background: rgb(50, 50, 50);
+  color: transparent;
+  border-radius: .4em;
+  padding: .4em .9em;
+  transition: color .15s ease, background .15s ease;
+}
+
+.spoiler::after {
+  content: "( reveal )";
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  color: #aaa;
+  font-size: .8em;
+  opacity: 1;
+  transition: opacity .15s ease;
+}   
+
+.spoiler:hover::after,
+.spoiler:focus-visible::after {
+  opacity: 0;
+}
+
+.spoiler:hover,
+.spoiler:focus-visible {
+    color: inherit;
+    background: transparent;
+}
+
+.imageDivMod{
+    width: 100%;
+    flex: 0 0 100%;
+    display: grid;
+    align-items: center;
+}
+
+.carouselButton {
+    all:unset;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    
+    width: 40px;
+    height: 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 24px;
+    font-weight: bold;
+
+    background: rgba(0,0,0,0.75);
+    color: white;
+    border-radius: 50%;
+    cursor: pointer;
+
+    user-select: none;
+    z-index: 2;
+
+    transition: background 0.2s ease;
+}
+
+.carouselButton:hover {
+    background: rgba(0,0,0,1);
+}
+
+.carouselButton.left {
+    left: 10px;
+}
+
+.carouselButton.right {
+    right: 10px;
+}
+
+.carouselButton:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
