@@ -6,7 +6,7 @@ const allData = [
     items: [
         {
             fileName: "AlpineStylized_tex", type: "video", size: "column2",
-            fullView: { fileName: "AlpineStylized_tex", title: "Alpine A310 Stylized", desc: "", date: "", otherImages: ["AlpineStylized_tex", "Renault_Alpine_A310_StylizedV2", "Renault_Alpine_A310_Stylized"] },
+            fullView: { fileName: "AlpineStylized_tex", title: "Alpine A310 Stylized", desc: "", date: "", otherImages: [{file: "AlpineStylized_tex", type: 'webm'}, "Renault_Alpine_A310_StylizedV2", "Renault_Alpine_A310_Stylized"]},
         },
         {
             fileName: "CreationOfPino", type: "img", size: "column2",
@@ -113,7 +113,7 @@ const allData = [
 
         {
             fileName: "CasseteTape", type: "video", size: "onexone",
-            fullView: { fileName: "CasseteTape", title: "Cassete Tape", desc: "", date: "", otherImages: ["CasseteTape"] },
+            fullView: { fileName: "CasseteTape", title: "Cassete Tape", desc: "", date: "", otherImages: [{file: "CasseteTape", type: 'webm'},] },
         },
 
         {
@@ -123,15 +123,15 @@ const allData = [
 
         {
             fileName: "InsideJob", type: "video", size: "onexone",
-            fullView: { fileName: "InsideJob", title: "Inside-Job", desc: "", date: "", otherImages: ["InsideJob"] },
+            fullView: { fileName: "InsideJob", title: "Inside-Job", desc: "", date: "", otherImages: [{file: "InsideJob", type: 'webm'},] },
         },
         {
             fileName: "LilRobotVideo", type: "video", size: "onexone",
-            fullView: { fileName: "LilRobotVideo", title: "LilRobot", desc: "", date: "", otherImages: ["LilRobotVideo"] },
+            fullView: { fileName: "LilRobotVideo", title: "LilRobot", desc: "", date: "", otherImages: [{file: "LilRobotVideo", type: 'webm'},] },
         },
         {
             fileName: "Triangle", type: "video", size: "onexone",
-            fullView: { fileName: "Triangle", title: "Triangle", desc: "", date: "", otherImages: ["Triangle"] },
+            fullView: { fileName: "Triangle", title: "Triangle", desc: "", date: "", otherImages: [{file: "Triangle", type: 'webm'}] },
         },
         {
             fileName: "Alien_1", type: "img", size: "row2",
@@ -139,7 +139,7 @@ const allData = [
         },
         {
             fileName: "WavesCompressed", type: "video", size: "column2",
-            fullView: { fileName: "WavesCompressed", title: "Waves", desc: "", date: "", otherImages: ["WavesCompressed"] },
+            fullView: { fileName: "WavesCompressed", title: "Waves", desc: "", date: "", otherImages: [{file: "Waves", type: 'webm'}] },
         },
 
         {
@@ -243,7 +243,7 @@ const allData = [
                     title: "Zipper Bounce",
                     desc: "",
                     date: "",
-                    otherImages: ["ZipperBounce", "ZipperBounce_wireframe", "ZipperBounce_geonodes", ]
+                    otherImages: [{file: "ZipperBounce", type: 'webm'}, "ZipperBounce_wireframe", "ZipperBounce_geonodes", ]
                 },
             },
 
@@ -287,7 +287,7 @@ const allData = [
                     title: "7 Segment",
                     desc: "I had just leared about Boolean algebra and logic gates and I implemented that into making a 7 segment display in Blender Geometry-nodes.",
                     date: "25. august 2025",
-                    otherImages: ["7Segment", "7Segment_geonodes"]
+                    otherImages: [{file: "7Segment", type: 'webm'}, "7Segment_geonodes"]
                 }
             },
 
@@ -309,7 +309,7 @@ const allData = [
                     title: "Snap Particle Simulation",
                     desc: "",
                     date: "",
-                    otherImages: ["SnapParticleSim"]
+                    otherImages: [{file: "SnapParticleSim", type: 'webm'},]
                 },
             },
 
@@ -502,24 +502,67 @@ const modalCarousel = (imgArr) => {
     const imgCont = document.createElement('div');
     imgCont.classList.add('modalCarouselImgCont')
     imgArr.forEach(e => {
-        const fullResImg = document.createElement('img');   
         const imageDiv = document.createElement('div');
         imageDiv.classList.add('imageDivMod');
-
-        fullResImg.classList.add('modalImage');
-        console.log(e);
         
-        const full = `${filePath.fullRes}${e}.png`;
-        const thumb = `${filePath.thumbnail}${e}.png`;
+        if(!e.type){
+            const fullResImg = document.createElement('img');  
+            fullResImg.classList.add('modalImage');   
+            
+            const full = `${filePath.fullRes}${e}.png`;
+            const thumb = `${filePath.thumbnail}${e}.png`;
 
-        fullResImg.onerror = () => {
-            fullResImg.onerror = null;
-            fullResImg.src = thumb;
-        };
+            fullResImg.onerror = () => {
+                fullResImg.onerror = null;
+                fullResImg.src = thumb;
+            };
 
-        fullResImg.src = full;
+            fullResImg.src = full;
 
-        imageDiv.append(fullResImg);
+            imageDiv.append(fullResImg);
+        }
+        
+        else if (e.type === 'webm') {
+            const video = document.createElement('video');
+            video.autoplay = true;
+            video.muted = true;
+            video.loop = true;
+            video.playsInline = true;
+            video.controlsList = "nofullscreen nodownload noremoteplayback noplaybackrate foobar";
+
+            const sourceWEBM = document.createElement('source');
+            const sourceMP4 = document.createElement('source');
+
+            const fullWEBM = `${filePath.fullRes}${e.file}.webm`;
+            const thumbWEBM = `${filePath.thumbnail}${e.file}.webm`;
+
+            const fullMP4 = `${filePath.fullRes}${e.file}.mp4`;
+            const thumbMP4 = `${filePath.thumbnail}${e.file}.mp4`;
+
+            sourceWEBM.src = fullWEBM;
+            sourceWEBM.type = 'video/webm';
+
+            sourceMP4.src = fullMP4;
+            sourceMP4.type = 'video/mp4';
+
+            sourceWEBM.onerror = () => {
+                sourceWEBM.onerror = null;
+                sourceWEBM.src = thumbWEBM;
+                video.load();
+            };
+
+            sourceMP4.onerror = () => {
+                sourceMP4.onerror = null;
+                sourceMP4.src = thumbMP4;
+                video.load();
+            };
+
+            video.append(sourceWEBM);
+            video.append(sourceMP4);
+
+            imageDiv.append(video);
+        }
+
         imgCont.append(imageDiv);
     });
     
