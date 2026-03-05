@@ -6,49 +6,45 @@ const allData = [
     items: [
         {
             fileName: "AlpineStylized_tex", type: "video", size: "column2",
-            fullView: { fileName: "AlpineStylized_tex", title: "Alpine A310 Stylized", desc: "", date: "", otherImages: [{file: "AlpineStylized_tex", type: 'webm'}, "Renault_Alpine_A310_StylizedV2", "Renault_Alpine_A310_Stylized"]},
+            fullView: { fileName: "AlpineStylized_tex", title: "Alpine A310 Stylized", desc: "This is the cullmination of a long project. I had been recreating the previous Alpine A310 and finalized the stylized look I was going for.", date: "15. August 2025", otherImages: [{file: "AlpineStylized_tex", type: 'webm'}, "Renault_Alpine_A310_StylizedV2", "Renault_Alpine_A310_Stylized"]},
         },
         {
             fileName: "CreationOfPino", type: "img", size: "column2",
-            fullView: { fileName: "CreationOfPino", title: "Creation Of Pino", desc: "", date: "", otherImages: ["CreationOfPino"] },
+            fullView: { fileName: "CreationOfPino", title: "Creation Of Pino", desc: "Just finnished Lies of P and felt like making something that represented Pino's style and grace.", date: "10. August 2025", otherImages: ["CreationOfPino"] },
         },
         {
             fileName: "AlpineA310_2", type: "img", size: "column2",
-            fullView: { fileName: "AlpineA310_2", title: "Alpine A310", desc: "", date: "", otherImages: ["AlpineA310_2", "AlpineA310_1", "AlpineA310_3", "AlpineA310_1_wireframe"] },
+            fullView: { fileName: "AlpineA310_2", title: "Alpine A310", desc: "Final version of an Alpine A310 with decent topology. Learned alot from this project.", date: "26. July 2025", otherImages: ["AlpineA310_2", "AlpineA310_1", "AlpineA310_3", "AlpineA310_1_wireframe"] },
         },
 
         {
             fileName: "Metropolis1927", type: "img", size: "onexone",
-            fullView: { fileName: "Metropolis1927", title: "Metropolis 1927", desc: "", date: "", otherImages: ["Metropolis1927"] },
+            fullView: { fileName: "Metropolis1927", title: "Metropolis 1927", desc: "I was going through insteresting movie shots and stumbled apon Metropolis 1927 and wanted to try recreating the title card.", date: "12. September 2024", otherImages: ["Metropolis1927"] },
         },
 
         {
             fileName: "KimKitsuragi_2", type: "img", size: "row2",
-            fullView: { fileName: "KimKitsuragi_2", title: "KimKitsuragi", desc: "", date: "", otherImages: ["KimKitsuragi_2"] },
+            fullView: { fileName: "KimKitsuragi_2", title: "KimKitsuragi", desc: "This is my second attempt at what started out as a sculpting project. I modeled and textured the jacket and face of my favorite character from Disco Elysium.", date: "17. August 2024", otherImages: ["KimKitsuragi_2"] },
         },
         {
             fileName: "SanjiLighter_Lit", type: "img", size: "row2",
-            fullView: { fileName: "SanjiLighter_Lit", title: "SanjiLighter", desc: "", date: "", otherImages: ["SanjiLighter_Lit", "SanjiLighter", "SanjiLighter_closeup", "SanjiLighter_wireframe"] },
+            fullView: { fileName: "SanjiLighter_Lit", title: "SanjiLighter", desc: "Recreated Sanji's iconic lighter from One Piece from reference images from the show.", date: "31. July 2024", otherImages: ["SanjiLighter_Lit", "SanjiLighter", "SanjiLighter_closeup", "SanjiLighter_wireframe"] },
         },
         {
             fileName: "BladerunnerPoolRoom", type: "img", size: "column2",
-            fullView: { fileName: "BladerunnerPoolRoom", title: "Bladerunner Pool Room", desc: "", date: "", otherImages: ["BladerunnerPoolRoom"] },
+            fullView: { fileName: "BladerunnerPoolRoom", title: "Bladerunner Pool Room", desc: "Had fun playing with fake caustics recreating a scene from Blade Runner 2049", date: "30. July 2024", otherImages: ["BladerunnerPoolRoom"] },
         },
         {
             fileName: "BassGuitar", type: "img", size: "column2",
-            fullView: { fileName: "BassGuitar", title: "Bass Guitar", desc: "", date: "", otherImages: ["BassGuitar"] },
-        },
-        {
-            fileName: "Guitar_Painterly", type: "img", size: "column2",
-            fullView: { fileName: "Guitar_Painterly", title: "Guitar Painterly", desc: "", date: "", otherImages: ["Guitar_Painterly"] },
+            fullView: { fileName: "BassGuitar", title: "Bass Guitar", desc: "Animation practice inspired by a scene from FLCL.", date: "6. February 2024", otherImages: ["BassGuitar", "Guitar_Painterly"] },
         },
         {
             fileName: "Speaker_01", type: "img", size: "column2",
-            fullView: { fileName: "Speaker_01", title: "Speaker", desc: "", date: "", otherImages: ["Speaker_01"] },
+            fullView: { fileName: "Speaker_01", title: "Speaker", desc: "Gave myself prompts of things to reimagine in a futuristic style.", date: "17. January 2024", otherImages: ["Speaker_01", "Speaker_02"] },
         },
         {
             fileName: "RibbonBackground_4k", type: "img", size: "column2",
-            fullView: { fileName: "RibbonBackground_4k", title: "Ribbon Background", desc: "", date: "", otherImages: ["RibbonBackground_4k"] },
+            fullView: { fileName: "RibbonBackground_4k", title: "Ribbon Background", desc: "Tired of the default Windows 11 wallpapers, I created my own.", date: "27. December 2023", otherImages: ["RibbonBackground_4k"] },
         },
         {
             fileName: "Sci-Fi_Futurism_Art", type: "img", size: "row2",
@@ -58,7 +54,6 @@ const allData = [
             fileName: "PhoneLightStreaksASUS", type: "img", size: "column2",
             fullView: { fileName: "PhoneLightStreaksASUS", title: "Phone Light-streaks", desc: "", date: "", otherImages: ["PhoneLightStreaksASUS"] },
         },
-
         {
             fileName: "Renault_Alpine_A310_StylizedV2", type: "img", size: "column2",
             fullView: { fileName: "Renault_Alpine_A310_StylizedV2", title: "Alpine A310 Stylized", desc: "", date: "", otherImages: ["Renault_Alpine_A310_StylizedV2", "Renault_Alpine_A310_Stylized", "Renault_Alpine_A310_03"] },
@@ -67,24 +62,10 @@ const allData = [
             fileName: "Robots_BaW", type: "img", size: "column2", class: "pixelated",
             fullView: { fileName: "Robots_BaW", title: "Robots B&W", desc: "", date: "", otherImages: ["Robots_BaW"] },
         },
-
         {
             fileName: "OppenheimerThumbnail02", type: "img", size: "column2",
-            fullView: { fileName: "OppenheimerThumbnail02", title: "Oppenheimer 02", desc: "", date: "", otherImages: ["OppenheimerThumbnail02"] },
+            fullView: { fileName: "OppenheimerThumbnail02", title: "Oppenheimer 02", desc: "", date: "", otherImages: ["OppenheimerThumbnail02", "OppenheimerThumbnail01", "OppenheimerThumbnail04", "OppenheimerThumbnail03"] },
         },
-        {
-            fileName: "OppenheimerThumbnail01", type: "img", size: "column2",
-            fullView: { fileName: "OppenheimerThumbnail01", title: "Oppenheimer 01", desc: "", date: "", otherImages: ["OppenheimerThumbnail01"] },
-        },
-        {
-            fileName: "OppenheimerThumbnail04", type: "img", size: "column2",
-            fullView: { fileName: "OppenheimerThumbnail04", title: "Oppenheimer 04", desc: "", date: "", otherImages: ["OppenheimerThumbnail04"] },
-        },
-        {
-            fileName: "OppenheimerThumbnail03", type: "img", size: "column2",
-            fullView: { fileName: "OppenheimerThumbnail03", title: "Oppenheimer 03", desc: "", date: "", otherImages: ["OppenheimerThumbnail03"] },
-        },
-
         {
             fileName: "Liminal_01COMPOSITE", type: "img", size: "column2",
             fullView: { fileName: "Liminal_01COMPOSITE", title: "Liminal", desc: "", date: "", otherImages: ["Liminal_01COMPOSITE"] },
@@ -97,7 +78,6 @@ const allData = [
             fileName: "Pancakes_03", type: "img", size: "column2",
             fullView: { fileName: "Pancakes_03", title: "Pancakes", desc: "", date: "", otherImages: ["Pancakes_03"] },
         },
-
         {
             fileName: "DRGWeapons", type: "img", size: "column2",
             fullView: { fileName: "DRGWeapons", title: "DRG Weapons", desc: "", date: "", otherImages: ["DRGWeapons"] },
@@ -182,18 +162,9 @@ const allData = [
         },
 
         {
-            fileName: "CatPlanet", type: "img", size: "onexone",
-            fullView: { fileName: "CatPlanet", title: "Cat Planet", desc: "", date: "", otherImages: ["CatPlanet"] },
+            fileName: "CatFlame_All", type: "img", size: "onexone",
+            fullView: { fileName: "CatFlame_All", title: "Cat collection", desc: "", date: "18. October 2023", otherImages: ["CatFlame_All", "CatLavaLamp_Sketch", "CatFlame_Sketch", "CatPlanet"] },
         },
-        {
-            fileName: "CatLavaLamp_Sketch", type: "img", size: "onexone",
-            fullView: { fileName: "CatLavaLamp_Sketch", title: "Cat Lavalamp", desc: "", date: "", otherImages: ["CatLavaLamp_Sketch"] },
-        },
-        {
-            fileName: "CatFlame_Sketch", type: "img", size: "onexone",
-            fullView: { fileName: "CatFlame_Sketch", title: "Cat Flame", desc: "", date: "", otherImages: ["CatFlame_Sketch"] },
-        },
-
         {
             fileName: "TreasureGlare", type: "img", size: "column2",
             fullView: { fileName: "TreasureGlare", title: "Treasure", desc: "", date: "", otherImages: ["TreasureGlare"] },
@@ -423,6 +394,12 @@ const addImageGroups = (index) => {
     element.items.forEach(element => {
         const anim = document.createElement('div')
         anim.classList.add('anim')
+        if(element?.fullView?.otherImages?.length > 1){
+            const multipleImagesTag = document.createElement('div')
+            multipleImagesTag.classList.add("multipleImagesTag");
+            multipleImagesTag.innerText = "⮻";
+            anim.append(multipleImagesTag)
+        }
         
         if (element.size) { anim.classList.add(element.size) }
         if (element.class) { anim.classList.add(element.class) }
@@ -483,9 +460,20 @@ const openFullRes = (iO) => {
     const fullView = iO.fullView
     const fullviewBody = document.createElement('div');
     fullviewBody.classList.add('modalBody')
-    const descElem = document.createElement('div');  
-    descElem.append(document.createTextNode(fullView.desc))
+    const descElem = document.createElement('div');
+
+    const descDate = document.createElement('p');
+    descDate.classList.add('descDate');
+    descDate.append(fullView.date);
+
+    const descText = document.createElement('p');
+    descText.classList.add('descText');
+    descText.append(fullView.desc);
+    
+
+    descElem.append(descDate, descText)
     descElem.classList.add('modalDesc')
+
     
     fullviewBody.append(descElem, modalCarousel(fullView.otherImages))    
     openModal(fullView.title,fullviewBody, null, null, true)

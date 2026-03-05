@@ -102,8 +102,22 @@
 
 .modalDesc{
     width: 90%;
-    margin: auto;
+    /* margin: auto; */
     font-size: 20px;
+    text-align: start;
+}
+
+.descText{
+    font-size: 20px;
+}
+
+.descDate{
+    font-size: 13px;
+    padding: 5px;
+    background: rgb(var(--color2));
+    width: max-content;
+    border-radius: 15px;
+    margin-bottom: 5px;
 }
 
 .modalImage{
@@ -243,3 +257,4 @@
     opacity: 0.3;
     cursor: not-allowed;
 }
+
