@@ -194,7 +194,7 @@ const allData = [
     {
         title: 'Geometry Nodes',
         type: 'img',
-        bodyText: 'Geometry Nodes is a system in Blender for creating procedural geometry using node trees. All of these projects were built entirely with Geo Nodes.',
+        bodyText: 'Geometry Nodes is a system in Blender for creating procedural geometry using node trees. All of these projects were built entirely with Geo-nodes.',
         items: [
             {
                 fileName: "SweaterThreadsTop", type: "img", size: "onexone",
@@ -214,7 +214,7 @@ const allData = [
                     title: "Zipper Bounce",
                     desc: "",
                     date: "",
-                    otherImages: [{file: "ZipperBounce", type: 'webm'}, "ZipperBounce_wireframe", "ZipperBounce_geonodes", ]
+                    otherImages: [{ file: "ZipperBounce", type: 'webm' }, "ZipperBounce_wireframe", "ZipperBounce_geonodes",]
                 },
             },
 
@@ -258,7 +258,7 @@ const allData = [
                     title: "7 Segment",
                     desc: "I had just leared about Boolean algebra and logic gates and I implemented that into making a 7 segment display in Blender Geometry-nodes.",
                     date: "25. august 2025",
-                    otherImages: [{file: "7Segment", type: 'webm'}, "7Segment_geonodes"]
+                    otherImages: [{ file: "7Segment", type: 'webm' }, "7Segment_geonodes"]
                 }
             },
 
@@ -280,7 +280,7 @@ const allData = [
                     title: "Snap Particle Simulation",
                     desc: "",
                     date: "",
-                    otherImages: [{file: "SnapParticleSim", type: 'webm'},]
+                    otherImages: [{ file: "SnapParticleSim", type: 'webm' },]
                 },
             },
 
@@ -299,7 +299,7 @@ const allData = [
     {
         title: 'Monogram',
         type: 'svg',
-        bodyText: 'These are some personal monograms I designed for a school project.',
+        bodyText: 'These are personal monograms I designed for a school project.',
         items: [
             { fileName: "Monogram_2", type: "svg", size: "", direction: "up", },
             { fileName: "Monogram_3", type: "svg", size: "", direction: "up", },
@@ -321,16 +321,14 @@ const allData = [
         type: 'img',
         bodyText: 'Here are some of my other projects that don’t fit into the other categories. I modeled the EP-133 and OP-Field meshes from reference photos in Plasticity and rendered them in Blender.',
         items: [
-            { fileName: "EP-133 K.O. II_Collection01", type: "img", size: "row2", direction: "left", animdelay: false, },
-            { fileName: "EP-133 K.O. II_Collection03", type: "img", size: "row2", direction: "left", animdelay: false, },
-            { fileName: "EP-133 K.O. II_Collection04", type: "img", size: "row2", direction: "left", animdelay: false, },
-            { fileName: "EP-133 K.O. II_Collection05", type: "img", size: "row2", direction: "left", animdelay: false, },
-            
-            { fileName: "OP-1_field_Collection04", type: "img", size: "row2", direction: "left", animdelay: false, },
-            { fileName: "OP-1_field_Collection03", type: "img", size: "row2", direction: "left", animdelay: false, },
-            { fileName: "OP-1_field_Collection02", type: "img", size: "row2", direction: "left", animdelay: false, },
-            { fileName: "OP-1_field_Collection01", type: "img", size: "row2", direction: "left", animdelay: false, },
-
+            {
+                fileName: "EP-133 K.O. II_All", type: "img", size: "fullWidth",
+                fullView: { fileName: "EP-133 K.O. II_All", title: "EP-133 K.O. II", desc: "I modeled the EP-133 and OP-Field meshes from reference photos in Plasticity and rendered them in Blender.", date: "13. January 2024", otherImages: ["EP-133 K.O. II_Collection01", "EP-133 K.O. II_Collection03", "EP-133 K.O. II_Collection04", "EP-133 K.O. II_Collection05"] },
+            },
+            {
+                fileName: "OP-1_field_All", type: "img", size: "fullWidth",
+                fullView: { fileName: "OP-1_field_All", title: "OP-1 field", desc: "I modeled the EP-133 and OP-Field meshes from reference photos in Plasticity and rendered them in Blender.", date: "28. December 2023", otherImages: ["OP-1_field_Collection04", "OP-1_field_Collection03", "OP-1_field_Collection02", "OP-1_field_Collection01"] },
+            },
             { fileName: "FinalMockupsCollage", type: "img", size: "column2", direction: "up", },
             { fileName: "Yeah01", type: "img", size: "onexone", direction: "up", },
             { fileName: "Dunes", type: "img", size: "onexone", direction: "up", },
@@ -357,82 +355,107 @@ allData.forEach(element => {
     tabcont.append(tabbutton)
 })
 
+const createEl = (type, classname = "") => {
+    const element = document.createElement(type)
+    if(classname != ""){element.classList.add(...classname.split(" "))}
+    return element
+}
+
+const createImageElement = (fullSrc, thumbSrc, className = "") => {
+    const img = createEl("img", className);
+    img.src = fullSrc;
+    img.onerror = () => {
+        img.onerror = null;
+        img.src = thumbSrc;
+    };
+    return img;
+}
+
+const createVideoElement = (fullSrc, thumbSrc, className = "") => {
+    const video = createEl("video", className);
+    video.autoplay = true;
+    video.muted = true;
+    video.loop = true;
+    video.playsInline = true;
+    video.controlsList = "nofullscreen nodownload noremoteplayback noplaybackrate";
+
+    const webm = document.createElement("source");
+    webm.src = `${fullSrc}.webm`;
+    webm.type = "video/webm";
+    webm.onerror = () => {
+        webm.onerror = null;
+        webm.src = `${thumbSrc}.webm`;
+        video.load();
+    };
+
+    const mp4 = document.createElement("source");
+    mp4.src = `${fullSrc}.mp4`;
+    mp4.type = "video/mp4";
+    mp4.onerror = () => {
+        mp4.onerror = null;
+        mp4.src = `${thumbSrc}.mp4`;
+        video.load();
+    };
+
+    video.append(webm, mp4);
+    return video;
+};
+
 const addImageGroups = (index) => {
     const element = allData[index]
-    // const innerbody = document.createElement('div')
-    // innerbody.classList.add('innerbody')
-    // body.append(innerbody)
-
-    const title = document.createElement('div')
-    title.classList.add('title')
+    const title = createEl('div', "title")
     title.append(document.createTextNode(element.title))
-    // innerbody.append(title)
     body.append(title)
 
     if(element.bodyText){
-        const bodyText = document.createElement('div')
-        bodyText.classList.add('bodyText')
+        const bodyText = createEl('div', "bodyText")
         bodyText.append(document.createTextNode(element.bodyText))
         body.append(bodyText)
     }
     
-    const cont = document.createElement('div')
+    let cont
     switch (element.type) {
         case 'svg':
-            cont.classList.add('svg-cont')
+            cont = createEl('div', 'svg-cont')
             break;
         case 'img':
-            cont.classList.add('img-cont')
+            cont = createEl('div', 'img-cont')
             break;
         default:
             console.log('You done messed up: Type')
             break;
     }
-    // innerbody.append(cont)
     body.append(cont)
 
     element.items.forEach(element => {
-        const anim = document.createElement('div')
-        anim.classList.add('anim')
+        const anim = createEl('div', 'anim')
         if(element?.fullView?.otherImages?.length > 1){
-            const multipleImagesTag = document.createElement('div')
-            multipleImagesTag.classList.add("multipleImagesTag");
+            const multipleImagesTag = createEl('div', "multipleImagesTag");
             multipleImagesTag.innerText = "⮻";
             anim.append(multipleImagesTag)
         }
         
-        if (element.size) { anim.classList.add(element.size) }
-        if (element.class) { anim.classList.add(element.class) }
-        
-        const image = document.createElement('img')
+        if(element.size){anim.classList.add(element.size)}
+        if(element.class){anim.classList.add(element.class)}
+
+        const full = filePath.fullRes + element.fileName
+        const thumb = filePath.thumbnail + element.fileName
+
+        let image
         switch (element.type) {
             case 'svg':
-                anim.innerHTML = `<img src="${filePath.thumbnail}${element.fileName}.svg" onload="SVGInject(this,{makeIdsUnique:false,useCache:false})">`
+                anim.innerHTML = `<img src="${thumb}.svg" onload="SVGInject(this,{makeIdsUnique:false,useCache:false})">`
                 break;
             case 'img':
-                image.src = filePath.thumbnail + element.fileName + ".png"
+                image = createImageElement(full + '.png', thumb + '.png')
                 anim.append(image)
                 break;
             case 'gif':
-                image.src = filePath.thumbnail + element.fileName + ".gif"
+                image = createImageElement(full + '.gif', thumb + '.gif')
                 anim.append(image)
                 break;
             case 'video':
-                const video = document.createElement('video')
-                video.autoplay = true
-                video.muted = true
-                video.loop = true
-                video.playsinline = true
-                video.controlslist = "nofullscreen nodownload noremoteplayback noplaybackrate foobar"
-                anim.append(video)
-                const sourceWEBM = document.createElement('source')
-                sourceWEBM.src = '.' + filePath.thumbnail + element.fileName + '.webm'
-                sourceWEBM.type = 'video/webm'
-                const sourceMP4 = document.createElement('source')
-                sourceMP4.src = '.'+ filePath.thumbnail + element.fileName + '.mp4'
-                sourceMP4.type = 'video/mp4'
-                video.append(sourceWEBM)
-                video.append(sourceMP4)
+                anim.append(createVideoElement(full, thumb))
                 break;
             default:
                 break;
@@ -458,97 +481,44 @@ const addImageGroups = (index) => {
 
 const openFullRes = (iO) => {   
     const fullView = iO.fullView
-    const fullviewBody = document.createElement('div');
-    fullviewBody.classList.add('modalBody')
-    const descElem = document.createElement('div');
+    const fullviewBody = createEl('div', 'modalBody')
+    const descElem = createEl('div', 'modalDesc')
 
-    const descDate = document.createElement('p');
-    descDate.classList.add('descDate');
+    const descDate = createEl('p','descDate');
     descDate.append(fullView.date);
 
-    const descText = document.createElement('p');
-    descText.classList.add('descText');
+    const descText = createEl('p','descText');
     descText.append(fullView.desc);
     
-
     descElem.append(descDate, descText)
-    descElem.classList.add('modalDesc')
-
     
     fullviewBody.append(descElem, modalCarousel(fullView.otherImages))    
     openModal(fullView.title,fullviewBody, null, null, true)
 }
 
 const modalCarousel = (imgArr) => {
-    const leftBut = document.createElement('button');
+    const leftBut = createEl('button', ("carouselButton left"));
     leftBut.innerText = 'ᐊ';
-    leftBut.classList.add("carouselButton","left");
 
-    const rightBut = document.createElement('button');
+    const rightBut = createEl('button', ("carouselButton right"));
     rightBut.innerText = 'ᐅ';
-    rightBut.classList.add("carouselButton","right");
-    const imgCont = document.createElement('div');
-    imgCont.classList.add('modalCarouselImgCont')
+
+    const imgCont = createEl('div', 'modalCarouselImgCont')
     imgArr.forEach(e => {
-        const imageDiv = document.createElement('div');
-        imageDiv.classList.add('imageDivMod');
+        const imageDiv = createEl('div', 'imageDivMod');
         
-        if(!e.type){
-            const fullResImg = document.createElement('img');  
-            fullResImg.classList.add('modalImage');   
-            
+        if(!e.type){           
             const full = `${filePath.fullRes}${e}.png`;
             const thumb = `${filePath.thumbnail}${e}.png`;
 
-            fullResImg.onerror = () => {
-                fullResImg.onerror = null;
-                fullResImg.src = thumb;
-            };
-
-            fullResImg.src = full;
-
-            imageDiv.append(fullResImg);
+            imageDiv.append(createImageElement(full, thumb, "modalImage"));
         }
         
         else if (e.type === 'webm') {
-            const video = document.createElement('video');
-            video.autoplay = true;
-            video.muted = true;
-            video.loop = true;
-            video.playsInline = true;
-            video.controlsList = "nofullscreen nodownload noremoteplayback noplaybackrate foobar";
+            const full = filePath.fullRes + e.file
+            const thumb = filePath.thumbnail + e.file
 
-            const sourceWEBM = document.createElement('source');
-            const sourceMP4 = document.createElement('source');
-
-            const fullWEBM = `${filePath.fullRes}${e.file}.webm`;
-            const thumbWEBM = `${filePath.thumbnail}${e.file}.webm`;
-
-            const fullMP4 = `${filePath.fullRes}${e.file}.mp4`;
-            const thumbMP4 = `${filePath.thumbnail}${e.file}.mp4`;
-
-            sourceWEBM.src = fullWEBM;
-            sourceWEBM.type = 'video/webm';
-
-            sourceMP4.src = fullMP4;
-            sourceMP4.type = 'video/mp4';
-
-            sourceWEBM.onerror = () => {
-                sourceWEBM.onerror = null;
-                sourceWEBM.src = thumbWEBM;
-                video.load();
-            };
-
-            sourceMP4.onerror = () => {
-                sourceMP4.onerror = null;
-                sourceMP4.src = thumbMP4;
-                video.load();
-            };
-
-            video.append(sourceWEBM);
-            video.append(sourceMP4);
-
-            imageDiv.append(video);
+            imageDiv.append(createVideoElement(full, thumb));
         }
 
         imgCont.append(imageDiv);
@@ -588,9 +558,7 @@ const modalCarousel = (imgArr) => {
 
     movePos(0);
 
-    const carousel = document.createElement('div')
-    carousel.classList.add("modalCarousel");
-    
+    const carousel = createEl('div', "modalCarousel");
     carousel.append(imgCont, leftBut, rightBut)
 
     return carousel

@@ -617,6 +617,15 @@ img[src$='.png'], img[src$='.gif'] {
     aspect-ratio: 1 / 2;
 }
 
+.fullWidth{
+    grid-column: span 4;
+    /* width: 100%; */
+}
+
+.fullWidth>*{
+    aspect-ratio: 4 / 1;
+}
+
 .anim{
     transition: 0.5s ease;
     opacity: 0;
