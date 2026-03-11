@@ -305,29 +305,12 @@ const filePath = {
 const body = document.getElementById('mainbodyforcards')
 const tabcont = document.getElementById('tab-cont')
 allData.forEach(element => {
-    const tabbutton = document.createElement('button')
-    tabbutton.classList.add('tab-button')
+    const tabbutton = createEl('button', 'tab-button')
     tabbutton.append(document.createTextNode(element.title))
     tabcont.append(tabbutton)
 })
 
-const createEl = (type, classname = "") => {
-    const element = document.createElement(type)
-    if(classname != ""){element.classList.add(...classname.split(" "))}
-    return element
-}
-
-const createImageElement = (fullSrc, thumbSrc, className = "") => {
-    const img = createEl("img", className);
-    img.src = fullSrc;
-    img.onerror = () => {
-        img.onerror = null;
-        img.src = thumbSrc;
-    };
-    return img;
-}
-
-const createVideoElement = (fullSrc, thumbSrc, className = "") => {
+const createVideoElement = (PrimarySrc, BackupSrc, className = "") => {
     const video = createEl("video", className);
     video.autoplay = true;
     video.muted = true;
@@ -336,20 +319,20 @@ const createVideoElement = (fullSrc, thumbSrc, className = "") => {
     video.controlsList = "nofullscreen nodownload noremoteplayback noplaybackrate";
 
     const webm = document.createElement("source");
-    webm.src = `${fullSrc}.webm`;
+    webm.src = `${PrimarySrc}.webm`;
     webm.type = "video/webm";
     webm.onerror = () => {
         webm.onerror = null;
-        webm.src = `${thumbSrc}.webm`;
+        webm.src = `${BackupSrc}.webm`;
         video.load();
     };
 
     const mp4 = document.createElement("source");
-    mp4.src = `${fullSrc}.mp4`;
+    mp4.src = `${PrimarySrc}.mp4`;
     mp4.type = "video/mp4";
     mp4.onerror = () => {
         mp4.onerror = null;
-        mp4.src = `${thumbSrc}.mp4`;
+        mp4.src = `${BackupSrc}.mp4`;
         video.load();
     };
 
@@ -403,15 +386,15 @@ const addImageGroups = (index) => {
                 anim.innerHTML = `<img src="${thumb}.svg" onload="SVGInject(this,{makeIdsUnique:false,useCache:false})">`
                 break;
             case 'img':
-                image = createImageElement(full + '.png', thumb + '.png')
+                image = createImageElement(thumb + '.png', full + '.png')
                 anim.append(image)
                 break;
             case 'gif':
-                image = createImageElement(full + '.gif', thumb + '.gif')
+                image = createImageElement(thumb + '.gif', full + '.gif')
                 anim.append(image)
                 break;
             case 'video':
-                anim.append(createVideoElement(full, thumb))
+                anim.append(createVideoElement(thumb, full))
                 break;
             default:
                 break;

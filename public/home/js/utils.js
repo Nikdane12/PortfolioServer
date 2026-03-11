@@ -66,3 +66,19 @@ const removeSelf = divs => {
 const removeAll = div => {
     while(div.firstChild){div.removeChild(div.firstChild)};
 }
+
+const createEl = (type, classname = "") => {
+    const element = document.createElement(type)
+    if(classname != ""){element.classList.add(...classname.split(" "))}
+    return element
+}
+
+const createImageElement = (PrimarySrc, BackupSrc, className = "") => {
+    const img = createEl("img", className);
+    img.src = PrimarySrc;
+    img.onerror = () => {
+        img.onerror = null;
+        img.src = BackupSrc;
+    };
+    return img;
+}
